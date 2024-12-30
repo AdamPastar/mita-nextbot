@@ -10,9 +10,9 @@ from aiogram.types import ChatMemberUpdated
 import asyncio
 import sqlite3
 
-API_TOKEN = "7600993088:AAEdJSFjNihSkeH8cyM5dzi6VffuHO4vf5g"
-ADMIN_IDS = [995460798]  # Замените на список ID администраторов
-CHANNEL_ID = "-1002478345916"  # Замените на @username вашего канала
+API_TOKEN = "your_bot_token"
+ADMIN_IDS = []  # Замените на список ID администраторов
+CHANNEL_ID = ""  # Замените на @username вашего канала
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
@@ -38,7 +38,7 @@ conn.commit()
 
 @dp.chat_member(ChatMemberUpdatedFilter(member_status_changed=("member", "left", "kicked")))
 async def on_member_update(event: ChatMemberUpdated):
-    if event.chat.id != int(-1002376147314):
+    if event.chat.id != CHANNEL_ID:
         return
 
     if event.new_chat_member.status == "member":
@@ -59,7 +59,7 @@ async def handle_media(message: Message):
     os.makedirs("downloads", exist_ok=True)  # Создаём папку, если её нет
     print(f"Директория 'downloads' существует: {os.path.exists('downloads')}")
 
-    member = await bot.get_chat_member(-1002376147314, message.from_user.id)
+    member = await bot.get_chat_member(CHANNEL_ID, message.from_user.id)
     if member.status not in ["member", "administrator", "creator"]:
         await message.reply("Вы должны быть подписаны на @pudge_hub, чтобы отправлять предложения.")
         return
