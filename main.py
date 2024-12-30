@@ -10,7 +10,7 @@ from aiogram.types import ChatMemberUpdated
 import asyncio
 import sqlite3
 
-API_TOKEN = "your_bot_token"
+API_TOKEN = ""
 ADMIN_IDS = []  # Замените на список ID администраторов
 CHANNEL_ID = ""  # Замените на @username вашего канала
 
