@@ -12,7 +12,7 @@ import sqlite3
 
 API_TOKEN = ""
 ADMIN_IDS = []  # Замените на список ID администраторов
-CHANNEL_ID = ""  # Замените на @username вашего канала
+CHANNEL_ID = ""  # Замените на ID вашего канала
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
