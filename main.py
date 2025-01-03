@@ -10,9 +10,9 @@ from aiogram.types import ChatMemberUpdated
 import asyncio
 import sqlite3
 
-API_TOKEN = "7600993088:AAEdJSFjNihSkeH8cyM5dzi6VffuHO4vf5g"
-ADMIN_IDS = [995460798]  # Замените на список ID администраторов
-CHANNEL_ID = "-1002478345916"  # Замените на @username вашего канала
+API_TOKEN = "="
+ADMIN_IDS = [995460798]
+CHANNEL_ID = "-1002478345916"
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
